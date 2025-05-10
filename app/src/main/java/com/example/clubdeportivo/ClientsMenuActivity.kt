@@ -12,6 +12,8 @@ class ClientsMenuActivity : AppCompatActivity() {
 
         val btnSocios = findViewById<Button>(R.id.btnSocios)
         val btnNoSocios = findViewById<Button>(R.id.btnNoSocios)
+        //val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
+
 
         btnSocios.setOnClickListener {
             val intent = Intent(this, SociosMenuActivity::class.java)
@@ -22,5 +24,10 @@ class ClientsMenuActivity : AppCompatActivity() {
             val intent = Intent(this, NoSociosMenuActivity::class.java)
             startActivity(intent)
         }
+
+        /*btnVencimientos.setOnClickListener {
+            val intent = Intent(this, ExpirationListActivity::class.java)
+            startActivity(intent)
+        }*/
     }
 }

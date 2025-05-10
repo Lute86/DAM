@@ -4,10 +4,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="16dp">
 
-    <Button android:id="@+id/btnRegister" android:text="Registrar Persona" />
-    <Button android:text="Actividades" />
-    <Button android:text="Informacion" />
-    <Button android:text="Salir" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#19181B"
+        android:text="Bienvenido" android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Registrar Persona"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Actividades"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Informacion"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background_exit"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Salir"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 </LinearLayout>
+
+
+
+
