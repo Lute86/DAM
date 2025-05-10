@@ -6,8 +6,7 @@
     android:background="@drawable/gradient_background"
     android:gravity="center">
 
-    <Button android:id="@+id/btnRegister" android:text="Registrar Persona" />
-    <Button android:text="Actividades" />
-    <Button android:text="Informacion" />
+    <Button android:id="@+id/btnSocios" android:text="Socios" />
+    <Button android:id="@+id/btnNoSocios" android:text="No Socios" />
     <Button android:text="Salir" />
 </LinearLayout>
