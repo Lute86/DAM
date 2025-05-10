@@ -6,9 +6,49 @@
     android:background="@drawable/gradient_background"
     android:gravity="center">
 
-    <EditText android:hint="DNI" />
-    <Button android:text="Buscar" />
-    <Button android:text="Cobrar" />
-    <Button android:text="Actualizar" />
-    <Button android:text="Info" />
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="DNI"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Buscar"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Cobrar"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Actualizar"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Info"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
 </LinearLayout>

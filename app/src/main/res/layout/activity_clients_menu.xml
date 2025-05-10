@@ -4,9 +4,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="16dp">
 
-    <Button android:id="@+id/btnSocios" android:text="Socios" />
-    <Button android:id="@+id/btnNoSocios" android:text="No Socios" />
-    <Button android:text="Salir" />
+    <Button
+        android:id="@+id/btnSocios"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Socios"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/btnNoSocios"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="No Socios"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/btnVencimientos"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Vencimientos"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Volver"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:background="@drawable/button_background_exit"/>
+
 </LinearLayout>

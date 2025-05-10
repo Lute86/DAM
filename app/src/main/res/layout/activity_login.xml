@@ -10,9 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#19181B"
         android:text="Club Deportivo" android:textSize="24sp" />
 
     <TextView
+        android:textColor="#19181B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Iniciar Sesión" android:textSize="18sp" />

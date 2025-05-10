@@ -8,4 +8,10 @@ class SociosMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_socios_menu)
     }
+
+    /*
+    val intent = Intent(this, PaymentsActivity::class.java)
+    intent.putExtra("isSocio", true)
+    startActivity(intent)
+     */
 }
