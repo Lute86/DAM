@@ -11,13 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#19181B"
-        android:text="Club Deportivo" android:textSize="24sp" />
+        android:text="Club Deportivo" android:textSize="34sp"
+        android:layout_marginBottom="20dp"/>
 
     <TextView
         android:textColor="#19181B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión" android:textSize="18sp" />
+        android:text="Iniciar Sesión" android:textSize="18sp"
+        android:layout_marginBottom="40dp"
+        />
 
     <EditText
         android:id="@+id/editTextDNI"
@@ -29,11 +32,12 @@
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:layout_marginBottom="20dp"
         android:hint="Contraseña" android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:text="INICIAR" />
 </LinearLayout>

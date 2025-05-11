@@ -18,7 +18,6 @@ class PaymentsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_payments)
 
         spinnerServicio = findViewById(R.id.spinnerServicio)
-        spinnerTipoPago = findViewById(R.id.spinnerTipoPago)
         editTextPrecio = findViewById(R.id.editTextPrecio)
         btnCobrar = findViewById(R.id.btnCobrar)
         btnVolver = findViewById(R.id.btnVolver)
@@ -52,7 +51,6 @@ class PaymentsActivity : AppCompatActivity() {
             return
         }
 
-        // Aquí puedes manejar el cobro según el tipo
         Toast.makeText(this, "Cobro realizado: $precio", Toast.LENGTH_SHORT).show()
     }*/
 }
