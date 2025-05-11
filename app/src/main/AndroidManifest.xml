@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ClubDeportivo"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewActivityActivity"
+            android:exported="false" />
+        <activity
             android:name=".NoConnectionActivity"
             android:exported="false" />
         <activity

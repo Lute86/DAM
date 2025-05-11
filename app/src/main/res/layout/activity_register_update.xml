@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:text="Actualizar"
+        android:textSize="24sp"
+        android:textColor="#19181B"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="100dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:hint="Nombre"
+        android:layout_width="250dp"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/editTextApellido"
+        android:hint="Apellido"
+        android:layout_width="250dp"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/editTextDNI"
+        android:hint="DNI"
+        android:layout_width="250dp"
+        android:layout_height="50dp" />
+    <EditText
+        android:id="@+id/editTextDireccion"
+        android:hint="Dirección"
+        android:layout_width="250dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkSocio"
+            android:text="Socio"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+        <CheckBox
+            android:id="@+id/checkNoSocio"
+            android:text="No Socio"
+            android:layout_weight="1"
+            android:layout_width="250dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkAptaMedica"
+        android:text="Apta Médica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:text="Actualizar"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@android:color/holo_purple" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:text="Volver"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+</LinearLayout>
