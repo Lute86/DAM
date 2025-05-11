@@ -8,53 +8,48 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/editTextPrecio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="Cobros"
         android:textColor="#19181B"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="20dp"/>
 
     <Spinner
         android:id="@+id/spinnerServicio"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:hint="Servicio..."
-        android:backgroundTint="@android:color/holo_purple"/>
-
-    <Spinner
-        android:id="@+id/spinnerTipoPago"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="Tipo de Pago"
-        android:backgroundTint="@android:color/holo_purple"/>
+        android:backgroundTint="@android:color/holo_purple"
+        android:layout_marginBottom="20dp"/>
 
     <EditText
+        android:id="@+id/editTextPrecio"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:hint="Precio"
         android:inputType="numberDecimal"
-        android:backgroundTint="@android:color/holo_purple"/>
+        android:backgroundTint="@android:color/holo_purple"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/btnCobrar"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="75dp"
         android:text="COBRAR"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        android:layout_marginBottom="120dp"/>
 
     <Button
         android:id="@+id/btnVolver"
-        android:layout_width="250dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Volver"
-        android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:background="@drawable/button_background_exit"/>
+        android:textSize="16sp"
+        android:backgroundTint="@android:color/holo_blue_dark"/>
 
 </LinearLayout>

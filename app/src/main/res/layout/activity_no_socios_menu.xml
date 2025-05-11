@@ -7,47 +7,74 @@
     android:gravity="center"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#19181B"
+        android:layout_marginBottom="100dp"
+        android:text="No Socios" android:textSize="24sp" />
+
     <EditText
+        android:id="@+id/textDNI"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:hint="DNI"
         android:textSize="16sp"
         android:padding="10dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@android:color/holo_purple"
         android:textColorHint="#FFFFFF"
         android:background="@drawable/button_background"/>
 
     <Button
+        android:id="@+id/btnBuscar"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:text="Buscar"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
 
     <Button
+        android:id="@+id/btnCobrar"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:text="Cobrar"
         android:textSize="16sp"
+        android:layout_marginBottom="5dp"
         android:textColor="#FFFFFF"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
 
     <Button
+        android:id="@+id/btnActualizar"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:text="Actualizar"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
 
     <Button
+        android:id="@+id/btnActividades"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:text="Actividades Realizadas"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:background="@drawable/button_background"/>
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Volver"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
         android:backgroundTint="@android:color/holo_purple"
