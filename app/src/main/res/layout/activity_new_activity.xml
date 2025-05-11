@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background"
+    android:gravity="center">
+
+    <TextView
+        android:text="Actividad"
+        android:textSize="24sp"
+        android:textColor="#19181B"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:hint="Nombre Actividad"
+        android:layout_width="250dp"
+        android:layout_height="50dp" />
+    <EditText
+        android:hint="Cupo"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="number" />
+
+    <EditText
+        android:hint="Precio"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="50dp"
+        />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:text="Guardar"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:layout_marginBottom="150dp"
+        />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:text="Volver"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@android:color/holo_blue_dark" />
+
+</LinearLayout>
