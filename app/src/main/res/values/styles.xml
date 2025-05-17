@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo para los ítems del menú lateral -->
+    <style name="CustomNavigationText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#000000</item> <!-- Opcional -->
+    </style>
+</resources>

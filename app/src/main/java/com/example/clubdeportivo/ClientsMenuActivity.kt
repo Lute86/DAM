@@ -5,14 +5,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 
-class ClientsMenuActivity : AppCompatActivity() {
+class ClientsMenuActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_clients_menu)
+        setActivityLayout(R.layout.activity_clients_menu)
+        // setContentView(R.layout.activity_clients_menu)
 
         val btnSocios = findViewById<Button>(R.id.btnSocios)
         val btnNoSocios = findViewById<Button>(R.id.btnNoSocios)
-        //val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
+       // val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
 
 
         btnSocios.setOnClickListener {
@@ -22,6 +23,12 @@ class ClientsMenuActivity : AppCompatActivity() {
 
         btnNoSocios.setOnClickListener {
             val intent = Intent(this, NoSociosMenuActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
+        btnVencimientos.setOnClickListener {
+            val intent = Intent(this, ExpirationsActivity::class.java)
             startActivity(intent)
         }
 

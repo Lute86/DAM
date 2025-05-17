@@ -2,42 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/gradient_background"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#19181B"
-        android:text="Club Deportivo" android:textSize="34sp"
-        android:layout_marginBottom="20dp"/>
+        android:lineSpacingExtra="34sp"
+        android:padding="30dp"
+        android:text="Club Deportivo"
+        android:textAlignment="center"
+        android:textColor="#C4E4EFFA"
+        android:fontFamily="monospace"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:textColor="#19181B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión" android:textSize="18sp"
         android:layout_marginBottom="40dp"
-        />
+        android:padding="10dp"
+        android:text="Iniciar Sesión"
+        android:textColor="#19181B"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/editTextDNI"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="DNI" android:inputType="number" />
+        android:hint="DNI"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
-        android:hint="Contraseña" android:inputType="textPassword" />
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:text="INICIAR" />
+
 </LinearLayout>

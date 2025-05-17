@@ -1,68 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gradient_background"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".ListSocioNoSocioActActivity" >
 
     <TextView
+        android:id="@+id/textLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:gravity="center"
-        android:text="Bienvenido"
-        android:textColor="#C4E4EFFA"
+        android:text="Listas"
         android:fontFamily="monospace"
+        android:textColor="#C4E4EFFA"
         android:textSize="40sp" />
 
     <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="250dp"
+        android:id="@+id/btnListSocios"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="Registrar"
+        android:text="Lista de Socios"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/btnClient"
-        android:layout_width="250dp"
+        android:id="@+id/btnListNoSocios"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="Clientes"
+        android:text="Lista No Socios"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/btnList"
-        android:layout_width="250dp"
+        android:id="@+id/btnListAtivities"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="Listas"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/btnVencimientos"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="120dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@android:color/holo_purple"
-        android:text="Vencimientos"
+        android:text="Lista Actividades"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
 </LinearLayout>
-
-
-
-

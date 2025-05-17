@@ -2,80 +2,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:background="@drawable/gradient_background"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="18dp"
+    android:scrollbarDefaultDelayBeforeFade="400">
 
     <TextView
         android:id="@+id/titleText"
-        android:text="Actualizar"
-        android:textSize="24sp"
-        android:textColor="#19181B"
-        android:layout_marginBottom="16dp"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:layout_width="110dp"
-        android:layout_height="50dp"/>
+        android:layout_marginBottom="16dp"
+        android:fontFamily="monospace"
+        android:text="Actualizar"
+        android:gravity="center"
+        android:textColor="#C4E4EFFA"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/editTextNombre"
-        android:hint="Nombre"
         android:layout_width="250dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff"
+        android:hint="Nombre" />
+
     <EditText
         android:id="@+id/editTextApellido"
-        android:hint="Apellido"
         android:layout_width="250dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:hint="Apellido"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff" />
+
     <EditText
         android:id="@+id/editTextDNI"
-        android:hint="DNI"
         android:layout_width="250dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:hint="DNI"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff" />
+
     <EditText
         android:id="@+id/editTextDireccion"
-        android:hint="Dirección"
         android:layout_width="250dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:hint="Dirección"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff" />
 
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/checkSocio"
-            android:text="Socio"
-            android:layout_weight="1"
             android:layout_width="250dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="Socio" />
+
         <CheckBox
             android:id="@+id/checkNoSocio"
-            android:text="No Socio"
-            android:layout_weight="1"
             android:layout_width="250dp"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="No Socio" />
     </LinearLayout>
 
     <CheckBox
         android:id="@+id/checkAptaMedica"
-        android:text="Apta Médica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginBottom="25dp"
+        android:text="Apta Médica" />
 
     <Button
         android:id="@+id/btnGuardar"
-        android:text="Actualizar"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="100dp"
-        android:backgroundTint="@android:color/holo_purple" />
-
-    <Button
-        android:id="@+id/btnVolver"
-        android:text="Volver"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@android:color/holo_blue_dark" />
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Actualizar" />
 
 </LinearLayout>
