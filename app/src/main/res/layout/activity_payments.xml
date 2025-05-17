@@ -43,13 +43,4 @@
         android:backgroundTint="@android:color/holo_purple"
         android:layout_marginBottom="120dp"/>
 
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Volver"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:backgroundTint="@android:color/holo_blue_dark"/>
-
 </LinearLayout>

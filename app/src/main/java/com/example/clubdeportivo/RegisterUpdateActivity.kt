@@ -6,7 +6,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class RegisterUpdateActivity : AppCompatActivity() {
+class RegisterUpdateActivity : BaseActivity() {
     private lateinit var titleText: TextView
     private lateinit var editTextNombre: EditText
     private lateinit var editTextApellido: EditText
@@ -20,7 +20,7 @@ class RegisterUpdateActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_update)
+        setActivityLayout(R.layout.activity_register_update)
 
         titleText = findViewById(R.id.titleText)
         editTextNombre = findViewById(R.id.editTextNombre)
@@ -38,9 +38,6 @@ class RegisterUpdateActivity : AppCompatActivity() {
 
         btnGuardar.setOnClickListener { handleSave(isUpdate) }
 
-        btnVolver.setOnClickListener {
-            finish()
-        }
     }
 
     private fun setupUI(isUpdate: Boolean) {

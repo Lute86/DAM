@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_principal" android:title="Principal" />
+    <item android:id="@+id/nav_listas" android:title="Listas" />
+    <item android:id="@+id/nav_cerrarSesion" android:title="Cerrar Sesion" />
+    <item android:id="@+id/nav_salir" android:title="Salir" />
+</menu>

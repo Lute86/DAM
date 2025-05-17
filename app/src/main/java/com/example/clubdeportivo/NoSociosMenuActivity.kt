@@ -7,10 +7,10 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class NoSociosMenuActivity : AppCompatActivity() {
+class NoSociosMenuActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_no_socios_menu)
+        setActivityLayout(R.layout.activity_no_socios_menu)
 
         val textDNI = findViewById<EditText>(R.id.textDNI)
         val btnBuscar = findViewById<Button>(R.id.btnBuscar)
@@ -28,6 +28,10 @@ class NoSociosMenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val btnVolver = findViewById<Button>(R.id.btnVolver)
+        btnVolver.setOnClickListener {
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
         /*btnActualizar.setOnClickListener{
             //pantalla actualizar no socios
         }*/

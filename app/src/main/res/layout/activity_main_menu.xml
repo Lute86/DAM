@@ -10,9 +10,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#19181B"
         android:layout_marginBottom="100dp"
-        android:text="Bienvenido" android:textSize="24sp" />
+        android:text="Bienvenido"
+        android:textColor="#19181B"
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -21,19 +22,42 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@android:color/holo_purple"
-        android:text="Registrar Persona"
+        android:text="Registrar"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <Button
+        android:id="@+id/btnClient"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:text="Actividades"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
         android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        android:text="Clientes"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnList"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Listas"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnActividades"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Actividades"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 
     <Button
         android:layout_width="250dp"
@@ -46,6 +70,7 @@
         android:background="@drawable/button_background"/>
 
     <Button
+        android:id="@+id/btnSalir"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:background="@drawable/button_background_exit"

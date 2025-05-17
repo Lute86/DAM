@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
 
-class SociosMenuActivity : AppCompatActivity() {
+class SociosMenuActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_socios_menu)
+        setActivityLayout(R.layout.activity_socios_menu)
 
         val textDNI = findViewById<EditText>(R.id.textDNI)
         val btnBuscar = findViewById<Button>(R.id.btnBuscar)
@@ -26,6 +26,12 @@ class SociosMenuActivity : AppCompatActivity() {
             intent.putExtra("isSocio", true)
             startActivity(intent)
         }
+        /*
+        val btnLista = findViewById<Button>(R.id.btnLista)
+        btnLista.setOnClickListener {
+            val intent = Intent(this, ListaSocioActivity::class.java)
+            startActivity(intent)
+        }*/
 
         /*btnActualizar.setOnClickListener{
             //pantalla actualizar socios

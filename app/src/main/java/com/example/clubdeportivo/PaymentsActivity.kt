@@ -20,7 +20,6 @@ class PaymentsActivity : AppCompatActivity() {
         spinnerServicio = findViewById(R.id.spinnerServicio)
         editTextPrecio = findViewById(R.id.editTextPrecio)
         btnCobrar = findViewById(R.id.btnCobrar)
-        btnVolver = findViewById(R.id.btnVolver)
 
         val isSocio = intent.getBooleanExtra("isSocio", false)
 

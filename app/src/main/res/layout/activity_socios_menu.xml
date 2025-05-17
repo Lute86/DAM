@@ -43,7 +43,7 @@
         android:layout_height="60dp"
         android:text="Cobrar"
         android:textSize="16sp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:textColor="#FFFFFF"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
@@ -55,7 +55,7 @@
         android:text="Actualizar"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
 
@@ -70,13 +70,4 @@
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
 
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Volver"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
 </LinearLayout>
