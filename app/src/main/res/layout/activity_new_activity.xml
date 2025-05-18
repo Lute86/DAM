@@ -16,7 +16,7 @@
         android:fontFamily="monospace"
         android:text="Actividad"
         android:textColor="#C4E4EFFA"
-        android:textSize="30sp" />
+        android:textSize="35sp" />
 
     <EditText
         android:hint="Nombre Actividad"

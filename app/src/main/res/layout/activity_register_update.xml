@@ -18,7 +18,7 @@
         android:text="Actualizar"
         android:gravity="center"
         android:textColor="#C4E4EFFA"
-        android:textSize="24sp" />
+        android:textSize="35sp" />
 
     <EditText
         android:id="@+id/editTextNombre"

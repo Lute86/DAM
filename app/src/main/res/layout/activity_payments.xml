@@ -12,10 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="monospace"
         android:text="Cobros"
         android:textColor="#C4E4EFFA"
-        android:fontFamily="monospace"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:layout_margin="50dp"/>
 
     <Spinner
         android:id="@+id/spinnerServicio"

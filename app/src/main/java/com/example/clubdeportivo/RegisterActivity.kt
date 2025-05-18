@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 class RegisterActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+      //  enableEdgeToEdge()
         setActivityLayout(R.layout.activity_register)
 
         val btnRegistPerson = findViewById<Button>(R.id.btnRegistPerson)
