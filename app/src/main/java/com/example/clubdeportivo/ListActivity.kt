@@ -12,27 +12,31 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ListActivity : BaseActivity(), OnItemClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setActivityLayout(R.layout.activity_list)
+    class ListActivity : BaseActivity(), OnItemClickListener {
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val tipo = intent.getStringExtra("tipo") ?: "Desconocido"
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setActivityLayout(R.layout.activity_list)
 
-        val textTitulo = findViewById<TextView>(R.id.textTitulo)
-        textTitulo.text = "Lista de $tipo"
+            val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+            recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val datos = when (tipo) {
-            "socios" -> listOf("Socio 1", "Socio 2", "Socio 3")
-            "noSocios" -> listOf("No Socio 1", "No Socio 2")
-            "Actividades" -> listOf("Fútbol", "Natación", "Yoga")
-            else -> listOf("Sin datos")
+            val dbHelper = UserDBHelper(this)
+            val actividades = dbHelper.obtenerTodasLasActividades()
+
+            val textTitulo = findViewById<TextView>(R.id.textTitulo)
+            textTitulo.text = "Actividades disponibles"
+
+            val adapter = ListAdapter(actividades, this)
+            recyclerView.adapter = adapter
         }
 
-        val adapter = ListAdapter(datos, this)
-        recyclerView.adapter = adapter
+        override fun onItemClick(item: String) {
+            Toast.makeText(this, "Seleccionado: $item", Toast.LENGTH_SHORT).show()
+        }
     }
+
+
 
     override fun onItemClick(item: String) {
         Toast.makeText(this, "Seleccionado: $item", Toast.LENGTH_SHORT).show()
