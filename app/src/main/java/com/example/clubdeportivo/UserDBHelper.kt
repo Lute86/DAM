@@ -4,6 +4,9 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -24,7 +27,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         const val COLUMN_USERNAME = "usuario"
         const val COLUMN_PASSWORD = "password"
 
-        const val TABLE_ACTIVITIES = "activities"
+        const val TABLE_ACTIVITIES = "actividades"
         const val COLUMN_PRECIO = "precio"
 
         const val TABLE_CUOTAS = "cuotas"
@@ -66,6 +69,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             id_usuario INTEGER,
             fecha_vencimiento TEXT,
+            monto REAL,
             pagado INTEGER,
             FOREIGN KEY(id_usuario) REFERENCES users(id)
         )
@@ -109,6 +113,11 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         onCreate(db)
     }
 
+    fun getCurrentDate(): String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        return sdf.format(Date())
+    }
+
     fun verificarLoginAdmin(username: String, password: String): Boolean {
         val db = readableDatabase
         val cursor = db.query(
@@ -121,6 +130,15 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val success = cursor.count > 0
         cursor.close()
         return success
+    }
+
+    //Para revisar si ya existe antes de ingresar un usuario
+    fun usuarioExiste(dni: String): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT id FROM users WHERE dni = ?", arrayOf(dni))
+        val exists = cursor.count > 0
+        cursor.close()
+        return exists
     }
 
     fun insertarUsuario(nombre: String, apellido: String, dni: String, direccion: String, tipo: String, apto: Boolean): Long {
@@ -187,11 +205,12 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     // Agregar cuota para socio
-    fun insertarCuota(idUsuario: Int, fechaVencimiento: String, pagado: Boolean = false): Long {
+    fun insertarCuota(idUsuario: Int, fechaVencimiento: String, monto: Double, pagado: Boolean = false): Long {
         val db = writableDatabase
         val values = ContentValues().apply {
             put("id_usuario", idUsuario)
             put("fecha_vencimiento", fechaVencimiento)
+            put("monto", monto)
             put("pagado", if (pagado) 1 else 0)
         }
         return db.insert("cuotas", null, values)
@@ -200,7 +219,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     // Listar cuotas que vencen HOY
     fun cuotasVencenHoy(): List<Map<String, String>> {
         val db = readableDatabase
-        val hoy = java.time.LocalDate.now().toString()
+        val hoy = getCurrentDate()
         val cursor = db.rawQuery("SELECT u.nombre, u.apellido, c.fecha_vencimiento FROM cuotas c JOIN users u ON c.id_usuario = u.id WHERE c.fecha_vencimiento = ? AND c.pagado = 0", arrayOf(hoy))
 
         val lista = mutableListOf<Map<String, String>>()
@@ -255,7 +274,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val values = ContentValues().apply {
             put("id_usuario", idUsuario)
             put("id_actividad", idActividad)
-            put("fecha", java.time.LocalDate.now().toString())
+            put("fecha", getCurrentDate())
         }
         return db.insert("actividad_pagos", null, values)
     }
