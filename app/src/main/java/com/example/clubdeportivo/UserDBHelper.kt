@@ -24,6 +24,12 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         const val COLUMN_USERNAME = "usuario"
         const val COLUMN_PASSWORD = "password"
 
+        const val TABLE_ACTIVITIES = "activities"
+        const val COLUMN_PRECIO = "precio"
+
+        const val TABLE_CUOTAS = "cuotas"
+
+        const val TABLE_ACTIVITIES_PAYMENTS = "actividad_pagos"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -48,15 +54,15 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     """.trimIndent()
 
         val createActivitiesTable = """
-        CREATE TABLE activities (
+        CREATE TABLE $TABLE_ACTIVITIES (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nombre TEXT,
-            precio REAL
+            $COLUMN_NOMBRE TEXT,
+            $COLUMN_PRECIO REAL
         )
     """.trimIndent()
 
         val createCuotasTable = """
-        CREATE TABLE cuotas (
+        CREATE TABLE $TABLE_CUOTAS (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             id_usuario INTEGER,
             fecha_vencimiento TEXT,
@@ -66,7 +72,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
     """.trimIndent()
 
         val createPagosActividadTable = """
-        CREATE TABLE actividad_pagos (
+        CREATE TABLE $TABLE_ACTIVITIES_PAYMENTS (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             id_usuario INTEGER,
             id_actividad INTEGER,
@@ -87,16 +93,19 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('admin1', '1234')")
         db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('lucas', 'admin')")
         db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('sato', 'clave123')")
-        db?.execSQL("INSERT INTO actividades (nombre, precio) VALUES ('Fútbol', 1500.0)")
-        db?.execSQL("INSERT INTO actividades (nombre, precio) VALUES ('Natación', 2000.0)")
-        db?.execSQL("INSERT INTO actividades (nombre, precio) VALUES ('Yoga', 1800.0)")
-
+        db?.execSQL("INSERT INTO $TABLE_ACTIVITIES (nombre, precio) VALUES ('Fútbol', 1500.0)")
+        db?.execSQL("INSERT INTO $TABLE_ACTIVITIES (nombre, precio) VALUES ('Natación', 2000.0)")
+        db?.execSQL("INSERT INTO $TABLE_ACTIVITIES (nombre, precio) VALUES ('Yoga', 1800.0)")
 
     }
 
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_ADMINS")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_ACTIVITIES")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_ACTIVITIES_PAYMENTS")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_CUOTAS")
         onCreate(db)
     }
 
