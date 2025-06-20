@@ -30,7 +30,10 @@ class ListaPagosActivity : BaseActivity(), OnItemClickListener {
         Toast.makeText(this, "DNI recibido: $dni", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onItemClick(item: String) {
+    override fun onItemClick(item: String, position: Int) {
         Toast.makeText(this, "Seleccionaste: $item", Toast.LENGTH_SHORT).show()
+    }
+    override fun onItemLongClick(item: String, position: Int) {
+        // Por ahora no hacemos nada
     }
 }

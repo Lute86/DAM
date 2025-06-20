@@ -1,90 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="18dp"
-    android:scrollbarDefaultDelayBeforeFade="400">
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="237dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="monospace"
-        android:text="Actualizar"
-        android:gravity="center"
-        android:textColor="#C4E4EFFA"
-        android:textSize="35sp" />
-
-    <EditText
-        android:id="@+id/editTextNombre"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:textColorHint="#b3b6b7"
-        android:textColor="#ffffff"
-        android:hint="Nombre" />
-
-    <EditText
-        android:id="@+id/editTextApellido"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="Apellido"
-        android:textColorHint="#b3b6b7"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:id="@+id/editTextDNI"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="DNI"
-        android:textColorHint="#b3b6b7"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:id="@+id/editTextDireccion"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="Dirección"
-        android:textColorHint="#b3b6b7"
-        android:textColor="#ffffff" />
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:text="Actualizar"
+            android:textColor="#C4E4EFFA"
+            android:textSize="35sp" />
+
+        <EditText
+            android:id="@+id/editTextNombre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:textColorHint="#b3b6b7"
+            android:textColor="#ffffff"
+            android:hint="Nombre" />
+
+        <EditText
+            android:id="@+id/editTextApellido"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:hint="Apellido"
+            android:textColorHint="#b3b6b7"
+            android:textColor="#ffffff" />
+
+        <EditText
+            android:id="@+id/editTextDNI"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:hint="DNI"
+            android:textColorHint="#b3b6b7"
+            android:textColor="#ffffff" />
+
+        <EditText
+            android:id="@+id/editTextNumCelular"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:hint="Celular"
+            android:textColor="#ffffff"
+            android:textColorHint="#b3b6b7" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:hint="Correo Electrónico"
+            android:textColor="#ffffff"
+            android:textColorHint="#b3b6b7" />
+
+        <EditText
+            android:id="@+id/editTextDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:hint="Dirección"
+            android:textColorHint="#b3b6b7"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="32dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkSocio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Socio" />
+
+            <CheckBox
+                android:id="@+id/checkNoSocio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No Socio" />
+        </LinearLayout>
 
         <CheckBox
-            android:id="@+id/checkSocio"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Socio" />
+            android:id="@+id/checkAptaMedica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            android:text="Apta Médica" />
 
-        <CheckBox
-            android:id="@+id/checkNoSocio"
-            android:layout_width="250dp"
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="No Socio" />
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:text="Actualizar" />
+
     </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/checkAptaMedica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="Apta Médica" />
-
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:text="Actualizar" />
-
-</LinearLayout>
+</ScrollView>

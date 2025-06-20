@@ -10,8 +10,8 @@ class ListSocioNoSocioActActivity : BaseActivity() {
         setActivityLayout(R.layout.activity_list_socio_nosocio)
 
         // Configurar botones con un solo método
-        setupButton(R.id.btnListSocios, "socios")
-        setupButton(R.id.btnListNoSocios, "noSocios")
+        setupButton(R.id.btnListSocios, "Socios")
+        setupButton(R.id.btnListNoSocios, "No Socios")
         setupButton(R.id.btnListAtivities, "Actividades")
     }
 

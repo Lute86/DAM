@@ -1,5 +1,6 @@
 package com.example.clubdeportivo
 
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,15 +12,24 @@ class ListAdapter(
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.textItem)
 
         init {
-            view.setOnClickListener(this)
-        }
+            // Acá seteamos la fuente monospace para que los espacios fijos funcionen
+            //textView.typeface = Typeface.MONOSPACE
+            view.setOnClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(items[adapterPosition], adapterPosition)
+                }
+            }
 
-        override fun onClick(v: View?) {
-            listener.onItemClick(items[adapterPosition])
+            view.setOnLongClickListener {
+                if (adapterPosition != RecyclerView.NO_POSITION) {
+                    listener.onItemLongClick(items[adapterPosition], adapterPosition)
+                }
+                true
+            }
         }
     }
 

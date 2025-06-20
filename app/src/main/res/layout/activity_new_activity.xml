@@ -19,12 +19,15 @@
         android:textSize="35sp" />
 
     <EditText
+        android:id="@+id/editNombre"
         android:hint="Nombre Actividad"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:textColorHint="#b3b6b7"
         android:textColor="#ffffff" />
+
     <EditText
+        android:id="@+id/editCupo"
         android:hint="Cupo"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -33,6 +36,7 @@
         android:textColor="#ffffff"/>
 
     <EditText
+        android:id="@+id/editPrecio"
         android:hint="Precio"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -47,7 +51,5 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:backgroundTint="@android:color/holo_purple"
-        android:layout_marginBottom="150dp"
-        />
-
+        android:layout_marginBottom="150dp"/>
 </LinearLayout>

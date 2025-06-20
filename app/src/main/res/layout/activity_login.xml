@@ -33,15 +33,21 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="Usuario"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
         android:hint="Contraseña"
         android:inputType="textPassword" />
+
+    <CheckBox
+        android:id="@+id/checkboxShowPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Mostrar contraseña" />
 
     <Button
         android:id="@+id/btnLogin"

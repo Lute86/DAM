@@ -14,16 +14,18 @@ class ExpirationsActivity : BaseActivity(), OnItemClickListener {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val vencimientos = listOf(
-            "Socio 1 Pago de Cuota - 15/05/2025",
-            "Socio 2 Renovación Anual - 01/06/2025"
-        )
+        val dbHelper = UserDBHelper(this)
+        val vencimientos = dbHelper.obtenerVencimientosProximos(3) // vencen hoy o próximos 3 días
 
         val adapter = ListAdapter(vencimientos, this)
         recyclerView.adapter = adapter
     }
 
-    override fun onItemClick(item: String) {
+    override fun onItemClick(item: String, position: Int) {
         Toast.makeText(this, "Seleccionado: $item", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onItemLongClick(item: String, position: Int) {
+        // Por ahora no hacemos nada
     }
 }
