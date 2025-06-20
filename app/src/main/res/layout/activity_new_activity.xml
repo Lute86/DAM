@@ -8,32 +8,42 @@
     android:gravity="center">
 
     <TextView
-        android:text="Actividad"
-        android:textSize="24sp"
-        android:textColor="#19181B"
+        android:layout_width="249dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:layout_marginBottom="16dp"
-        android:layout_width="100dp"
-        android:layout_height="50dp"/>
+        android:fontFamily="monospace"
+        android:text="Actividad"
+        android:textColor="#C4E4EFFA"
+        android:textSize="35sp" />
 
     <EditText
+        android:id="@+id/editNombre"
         android:hint="Nombre Actividad"
         android:layout_width="250dp"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff" />
+
     <EditText
+        android:id="@+id/editCupo"
         android:hint="Cupo"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff"/>
 
     <EditText
+        android:id="@+id/editPrecio"
         android:hint="Precio"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:inputType="numberDecimal"
         android:layout_marginBottom="50dp"
-        />
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff"  />
 
     <Button
         android:id="@+id/btnGuardar"
@@ -41,7 +51,5 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:backgroundTint="@android:color/holo_purple"
-        android:layout_marginBottom="150dp"
-        />
-
+        android:layout_marginBottom="150dp"/>
 </LinearLayout>

@@ -26,9 +26,10 @@ class ClientsMenuActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        val btnVolver = findViewById<Button>(R.id.btnVolver)
-        btnVolver.setOnClickListener {
-            finish() // Cierra la actividad actual y vuelve a la anterior
+        val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
+        btnVencimientos.setOnClickListener {
+            val intent = Intent(this, ExpirationsActivity::class.java)
+            startActivity(intent)
         }
 
         /*btnVencimientos.setOnClickListener {

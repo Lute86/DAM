@@ -8,20 +8,50 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".ListaSocioNoSocioActivity" >
+    tools:context=".ListSocioNoSocioActActivity" >
 
     <TextView
         android:id="@+id/textLista"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
-        android:text="Bienvenido"
-        android:textColor="#19181B"
+        android:gravity="center"
+        android:text="Listas"
+        android:fontFamily="monospace"
+        android:textColor="#C4E4EFFA"
         android:textSize="40sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listView"
+    <Button
+        android:id="@+id/btnListSocios"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Lista de Socios"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnListNoSocios"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Lista No Socios"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnListAtivities"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Lista Actividades"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 
 </LinearLayout>
