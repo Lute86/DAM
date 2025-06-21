@@ -18,8 +18,8 @@ class ExpirationsActivity : BaseActivity(), OnItemClickListener {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val dbHelper = UserDBHelper(this)
-        val vencimientos = dbHelper.cuotasVencidas()
-
+      //  val vencimientos = dbHelper.cuotasVencidas()
+        val vencimientos = dbHelper.obtenerCuotasVencidasOProximas(10)
         if (vencimientos.isEmpty()) {
             textSinVencimientos.visibility = View.VISIBLE
             recyclerView.visibility = View.GONE

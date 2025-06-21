@@ -1,75 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/gradient_background"
-    android:gravity="center"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@drawable/gradient_background">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#C4E4EFFA"
-        android:fontFamily="monospace"
-        android:layout_marginBottom="100dp"
-        android:text="No Socios"
-        android:textSize="35sp" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/textDNI"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:hint="DNI"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:textColorHint="#FFFFFF"
-        android:background="@drawable/button_background"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Socios"
+            android:textSize="32sp"
+            android:textColor="#C4E4EFFA"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="40dp" />
 
-    <Button
-        android:id="@+id/btnBuscar"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Buscar"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        <EditText
+            android:id="@+id/textDNI"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="DNI"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/button_background" />
 
-    <Button
-        android:id="@+id/btnCobrar"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="Cobrar"
-        android:textSize="16sp"
-        android:layout_marginBottom="5dp"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        <Button
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Buscar"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/button_background" />
 
-    <Button
-        android:id="@+id/btnActualizar"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="Actualizar"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        <TextView
+            android:id="@+id/textNoSocioInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:padding="16dp"
+            android:visibility="gone"
+            android:layout_marginBottom="32dp" />
 
-    <Button
-        android:id="@+id/btnActividades"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="Actividades Realizadas"
-        android:textSize="16sp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:background="@drawable/button_background"/>
+        <Button
+            android:id="@+id/btnCobrar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Cobrar"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/button_background" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Actualizar"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/button_background" />
+
+        <Button
+            android:id="@+id/btnActividades"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Actividades Realizadas"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:background="@drawable/button_background" />
+
+    </LinearLayout>
+</ScrollView>

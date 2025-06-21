@@ -8,32 +8,34 @@ import androidx.recyclerview.widget.RecyclerView
 class ListaPagosActivity : BaseActivity(), OnItemClickListener {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ListAdapter
+    private var pagosList: List<String> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setActivityLayout(R.layout.activity_lista_pagos)
 
-        // Obtener el DNI pasado desde el intent
-        val dni = intent.getStringExtra("DNI") ?: ""
-
-        // Por ahora mostramos la lista fija (más adelante puedes filtrar por dni)
-        val pagos = listOf(
-            "Pago 1: $500 - Fecha: 15/05/2023",
-        )
-
-        // Configurar RecyclerView
         recyclerView = findViewById(R.id.recyclerViewPagos)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = ListAdapter(pagos, this)
 
-        // Mostrar un Toast con el DNI recibido (para verificar)
-        Toast.makeText(this, "DNI recibido: $dni", Toast.LENGTH_SHORT).show()
+        val dni = intent.getStringExtra("DNI")
+        if (dni.isNullOrEmpty()) {
+            Toast.makeText(this, "No se recibió DNI", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val dbHelper = UserDBHelper(this)
+        pagosList = dbHelper.obtenerPagosActividadesPorDNI(dni)
+
+        adapter = ListAdapter(pagosList, this)
+        recyclerView.adapter = adapter
     }
 
     override fun onItemClick(item: String, position: Int) {
         Toast.makeText(this, "Seleccionaste: $item", Toast.LENGTH_SHORT).show()
     }
+
     override fun onItemLongClick(item: String, position: Int) {
-        // Por ahora no hacemos nada
+        // Implementar si querés opciones de largo click
     }
 }
