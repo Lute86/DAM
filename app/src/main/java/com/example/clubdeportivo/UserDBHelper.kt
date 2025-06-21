@@ -101,7 +101,7 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db?.execSQL(createAdminsTable)
 
         // 👇 Seed básico con execSQL directamente
-        db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('admin1', '1234')")
+        db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('admin', '1234')")
         db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('lucas', 'admin')")
         db?.execSQL("INSERT INTO $TABLE_ADMINS ($COLUMN_USERNAME, $COLUMN_PASSWORD) VALUES ('sato', 'clave123')")
         db?.execSQL("INSERT INTO actividades (nombre, precio, cupo) VALUES ('Fútbol', 1500.0, 20)")
@@ -116,6 +116,18 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         db?.execSQL("INSERT INTO $TABLE_USERS ($COLUMN_NOMBRE, $COLUMN_APELLIDO, $COLUMN_DNI, " +
                 "$COLUMN_CELULAR, $COLUMN_EMAIL, $COLUMN_DIRECCION, $COLUMN_TIPO, $COLUMN_APTO) " +
                 "VALUES ('Maria', 'Falsa', '123456788', '0000003', 'maria@falsa.com', 'Calle 12', 'No Socio', 1)")
+
+        // Inserta cuota vencida para Ana (fecha pasada)
+        db?.execSQL("""
+        INSERT INTO cuotas (idSocio, monto, fechaPago, fechaVencimiento, estado)
+        VALUES (1, 1500.0, '2024-05-01', '2024-06-01', 'Vencida')
+        """.trimIndent())
+
+        // Inserta cuota próxima a vencer para Juan (fecha futura)
+                db?.execSQL("""
+        INSERT INTO cuotas (idSocio, monto, fechaPago, fechaVencimiento, estado)
+        VALUES (2, 1500.0, '2025-06-01', '2025-07-01', 'Activa')
+        """.trimIndent())
     }
 
 
@@ -337,6 +349,35 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         return cuotas
     }
 
+    fun obtenerCuotasVencidasOProximas(diasAdelante: Int = 0): List<String> {
+        val cuotas = mutableListOf<String>()
+        val db = this.readableDatabase
+
+        val query = """
+        SELECT u.nombre, u.apellido, c.fechaVencimiento, c.estado
+        FROM cuotas c
+        JOIN users u ON c.idSocio = u.id
+        WHERE date(c.fechaVencimiento) <= date('now', '+$diasAdelante days')
+        AND c.estado != 'Pagada'
+        ORDER BY c.fechaVencimiento ASC
+    """.trimIndent()
+
+        val cursor = db.rawQuery(query, null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val nombre = cursor.getString(0)
+                val apellido = cursor.getString(1)
+                val fecha = cursor.getString(2)
+                val estado = cursor.getString(3)
+                cuotas.add("$nombre $apellido - $estado - Vence: $fecha")
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+        return cuotas
+    }
 
     // Listar cuotas que vencen HOY
     @RequiresApi(Build.VERSION_CODES.O)
@@ -392,14 +433,73 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         return db.update("cuotas", values, "id = ?", arrayOf(idCuota.toString()))
     }
 
-    fun registrarPagoActividad(idUsuario: Int, idActividad: Int): Long {
-        val db = writableDatabase
-        val values = ContentValues().apply {
-            put("id_usuario", idUsuario)
-            put("id_actividad", idActividad)
-          //  put("fecha", java.time.LocalDate.now().toString())
+fun insertarPagoActividadPorNombre(dni: String, nombreActividad: String): Boolean {
+    val db = writableDatabase
+
+    val cursorUsuario = db.rawQuery("SELECT id FROM users WHERE dni = ?", arrayOf(dni))
+    val cursorActividad = db.rawQuery("SELECT id FROM actividades WHERE nombre = ?", arrayOf(nombreActividad))
+
+    if (!cursorUsuario.moveToFirst() || !cursorActividad.moveToFirst()) {
+        cursorUsuario.close()
+        cursorActividad.close()
+        return false
+    }
+
+    val idUsuario = cursorUsuario.getInt(0)
+    val idActividad = cursorActividad.getInt(0)
+    val fechaActual = java.time.LocalDate.now().toString()
+
+    cursorUsuario.close()
+    cursorActividad.close()
+
+    val values = ContentValues().apply {
+        put("id_usuario", idUsuario)
+        put("id_actividad", idActividad)
+        put("fecha", fechaActual)
+    }
+
+    return db.insert("actividad_pagos", null, values) != -1L
+}
+
+
+    fun obtenerPagosActividadesPorDNI(dni: String): List<String> {
+        val lista = mutableListOf<String>()
+        val db = readableDatabase
+
+        val query = """
+        SELECT a.nombre, ap.fecha 
+        FROM actividad_pagos ap
+        JOIN users u ON u.id = ap.id_usuario
+        JOIN actividades a ON a.id = ap.id_actividad
+        WHERE u.dni = ?
+        ORDER BY ap.fecha DESC
+    """
+
+        val cursor = db.rawQuery(query, arrayOf(dni))
+
+        while (cursor.moveToNext()) {
+            val actividad = cursor.getString(0)
+            val fecha = cursor.getString(1)
+            lista.add("Actividad: $actividad - Fecha: $fecha")
         }
-        return db.insert("actividad_pagos", null, values)
+
+        cursor.close()
+        return lista
+    }
+
+
+
+    fun obtenerActividadesPorDNI(dni: String): List<String> {
+        val db = readableDatabase
+        val cursor = db.rawQuery("SELECT actividad, fecha FROM PagosActividades WHERE dni = ?", arrayOf(dni))
+        val actividades = mutableListOf<String>()
+        while (cursor.moveToNext()) {
+            val actividad = cursor.getString(0)
+            val fecha = cursor.getLong(1)
+            actividades.add("Actividad: $actividad - Fecha: ${Date(fecha)}")
+        }
+        cursor.close()
+        return actividades
     }
 
     /*fun obtenerVencimientoCuota(dni: String): String? {

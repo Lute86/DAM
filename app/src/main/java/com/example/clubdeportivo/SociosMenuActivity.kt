@@ -35,18 +35,26 @@ class SociosMenuActivity : BaseActivity() {
                 val dbHelper = UserDBHelper(this)
                 val socio = dbHelper.obtenerUsuarioPorDNI(dni)
 
-                if (socio != null) {
+                if (socio != null && socio["tipo"] == "Socio") {
                     dniIngresado = dni
                     val infoView = findViewById<TextView>(R.id.textSocioInfo)
                     infoView.visibility = View.VISIBLE
                     infoView.text = "Socio: ${socio["nombre"]} ${socio["apellido"]}"
-                   // textSocioInfo.text = info
+                    // textSocioInfo.text = info
                     textSocioInfo.visibility = View.VISIBLE
                     btnCobrar.isEnabled = true
                     btnActualizar.isEnabled = true
                     btnInfo.isEnabled = true
                     // Opcional: deshabilitar campo DNI si querés que no se cambie
                     textDNI.isEnabled = false
+
+                    // Verifica cuota
+                    val vencimiento = dbHelper.obtenerVencimientoCuota(dni)
+                    if (vencimiento != null) {
+                        Toast.makeText(this, "Cuota paga. Vence el $vencimiento", Toast.LENGTH_LONG).show()
+                    } else {
+                        Toast.makeText(this, "No se registró pago de cuota.", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
                     Toast.makeText(this, "Socio no encontrado", Toast.LENGTH_SHORT).show()
                     textSocioInfo.text = ""
@@ -55,9 +63,10 @@ class SociosMenuActivity : BaseActivity() {
             } else {
                 Toast.makeText(this, "Ingrese un DNI válido", Toast.LENGTH_SHORT).show()
             }
+        }
 
+        // Funcionalidad del botón Cobrar
 
-            // Funcionalidad del botón Cobrar
             btnCobrar.setOnClickListener {
                 dniIngresado?.let {
                     val intent = Intent(this, PaymentsActivity::class.java)
@@ -99,8 +108,6 @@ class SociosMenuActivity : BaseActivity() {
                 } ?: Toast.makeText(this, "Busque un socio primero", Toast.LENGTH_SHORT).show()
             }
 
-
-        }
     }
         override fun onResume() {
             super.onResume()
