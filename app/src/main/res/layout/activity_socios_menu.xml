@@ -10,9 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#19181B"
+        android:textColor="#C4E4EFFA"
+        android:fontFamily="monospace"
         android:layout_marginBottom="100dp"
-        android:text="Socios" android:textSize="24sp" />
+        android:text="Socios"
+        android:textSize="35sp" />
 
     <EditText
         android:id="@+id/textDNI"
@@ -33,9 +35,20 @@
         android:text="Buscar"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
+
+    <!-- Nuevo TextView para mostrar información del socio -->
+    <TextView
+        android:id="@+id/textSocioInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btnCobrar"
@@ -63,7 +76,7 @@
         android:id="@+id/btnInfo"
         android:layout_width="250dp"
         android:layout_height="60dp"
-        android:text="Actividades Realizadas"
+        android:text="Info Cuota"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="100dp"

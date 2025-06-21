@@ -11,9 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
+        android:textColor="#C4E4EFFA"
         android:fontFamily="monospace"
         android:text="Club Deportivo"
-        android:textColor="#DCEBF2"
         android:textSize="34sp"
         android:textStyle="bold" />
 
@@ -49,15 +49,5 @@
         android:layout_marginBottom="120dp"
         android:backgroundTint="@android:color/holo_purple"
         android:background="@drawable/button_background"/>
-
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_background_exit"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text="Volver"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp" />
 
 </LinearLayout>

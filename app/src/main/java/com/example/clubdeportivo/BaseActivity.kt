@@ -44,7 +44,7 @@ open class BaseActivity : AppCompatActivity() {
         toggle.syncState()
 
         // Transparencia de la barra de navegación y estado
-        window.navigationBarColor = android.graphics.Color.TRANSPARENT
+        window.navigationBarColor = android.graphics.Color.BLACK
         window.statusBarColor = android.graphics.Color.TRANSPARENT
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.base_container)) { v, insets ->
@@ -60,7 +60,7 @@ open class BaseActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_listas -> {
-                    startActivity(Intent(this, ListaSocioNoSocioActivity::class.java))
+                    startActivity(Intent(this, ListSocioNoSocioActActivity::class.java))
                     true
                 }
                 R.id.nav_cerrarSesion -> {

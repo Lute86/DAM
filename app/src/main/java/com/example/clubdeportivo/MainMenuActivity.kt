@@ -2,7 +2,6 @@ package com.example.clubdeportivo
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 
 class MainMenuActivity : BaseActivity() {
@@ -23,9 +22,14 @@ class MainMenuActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        val btnSalir = findViewById<Button>(R.id.btnSalir)
-        btnSalir.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+        val btnList = findViewById<Button>(R.id.btnList)
+        btnList.setOnClickListener {
+            val intent = Intent(this, ListSocioNoSocioActActivity::class.java)
+            startActivity(intent)
+        }
+        val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
+        btnVencimientos.setOnClickListener {
+            val intent = Intent(this, ExpirationsActivity::class.java)
             startActivity(intent)
         }
     }

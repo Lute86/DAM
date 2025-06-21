@@ -11,17 +11,32 @@
     android:background="@drawable/gradient_background"
     tools:context=".RegisterActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:fontFamily="monospace"
+        android:text="Registrar"
+        android:textColor="#C4E4EFFA"
+        android:textSize="34sp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnRegistPerson"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Registrar Persona"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="80dp"
+        android:layout_marginBottom="30dp"
+        android:text="Persona"
+        android:textSize="24sp" />
+
 
     <Button
         android:id="@+id/btnRegistActivity"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Actividades" />
+        android:layout_height="80dp"
+        android:text="Actividad"
+        android:textSize="24sp" />
 
 </LinearLayout>

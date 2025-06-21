@@ -10,11 +10,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cobros"
-        android:textColor="#19181B"
-        android:textSize="24sp"
         android:layout_marginTop="150dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:fontFamily="monospace"
+        android:text="Cobros"
+        android:textColor="#C4E4EFFA"
+        android:textSize="30sp"
+        android:layout_margin="50dp"/>
 
     <Spinner
         android:id="@+id/spinnerServicio"
@@ -24,6 +26,13 @@
         android:backgroundTint="@android:color/holo_purple"
         android:layout_marginBottom="20dp"/>
 
+    <Spinner
+        android:id="@+id/spinnerTipoPago"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:hint="Tipo de Pago"
+        android:layout_marginBottom="20dp" />
+
     <EditText
         android:id="@+id/editTextPrecio"
         android:layout_width="250dp"
@@ -31,7 +40,9 @@
         android:hint="Precio"
         android:inputType="numberDecimal"
         android:backgroundTint="@android:color/holo_purple"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:textColorHint="#b3b6b7"
+        android:textColor="#ffffff"/>
 
     <Button
         android:id="@+id/btnCobrar"
